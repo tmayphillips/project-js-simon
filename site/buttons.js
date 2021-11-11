@@ -12,14 +12,16 @@ document.querySelector('#start').addEventListener('click', function() {
     yellowBtn: new Audio ("assets/simonSound4.mp3"),
   };
 
-  let count = 0;
+  let count = 1;
   let colors = ['red', 'blue', 'yellow', 'green']
   let color = ''
   let rand = getRandomInt(colors.length);
   let nextColor = (colors[rand])
   let sequence = [nextColor]
+
+  console.log(sequence)
   let i = 0
-  document.getElementById('next-color').innerHTML = nextColor
+  document.getElementById('next-color').innerHTML = sequence[0]
 
   let greenButton = document.querySelector('.simon-button.green');
   greenButton.addEventListener('click', function() {
@@ -49,29 +51,51 @@ document.querySelector('#start').addEventListener('click', function() {
     makeSelection(color,i)
   });
 
-  function makeSelection (color, i) {
-
-    let colors = ['red', 'blue', 'yellow', 'green']
-    let rand = getRandomInt(colors.length);
-    console.log(sequence[i])
+  function makeSelection (color) {
+    console.log('log sequence[i] '+ sequence[i])
+    
     if (sequence[i] === color) {
-      nextColor = (colors[rand])
-      sequence.push(nextColor)
-      console.log(sequence)
-      count++
-      i++
+      console.log(i, sequence.length - 1)
       document.getElementById('count').innerHTML = `Count: ${count}`
-      setInterval(() => {
-        for (let j = 0; j <= i; j++) {
-          document.getElementById('next-color').innerHTML = sequence[j]
-          ()
-        }
-      },1000)
+     
+      console.log(i === sequence.length - 1)
+      if (i === sequence.length - 1) {
+        console.log('inside if')
+        count++
+        
+        displayColors()
+        i = 0
+        
+      } else {
+        i++
+        //console.log('i = ' + i);
+      }
     } else {
       document.getElementById('next-color').innerHTML = 'GAME OVER'
       document.getElementById('count').innerHTML = `Final Score: ${count}`
-    }
+    }  
   }
-  
+
+  let displayColors = function() {
+    console.log('inside displayColors')
+
+    let colors = ['red', 'blue', 'yellow', 'green']
+    let rand = getRandomInt(colors.length);
+    nextColor = (colors[rand])
+    sequence.push(nextColor)
+    console.log('sequence after push '+ sequence)
+
+    let j = 0
+    setInterval(() => {
+      // document.getElementById('next-color').innerHTML = sequence[j] 
+      // let btnLight = document.getElementById(sequence[j]);
+      // btnLight.classList.add("light-up");
+      // btnLight.classList.remove("light-up");
+      
+      j++;
+      if (j === sequence.length) return
+    }, 1000)
+    console.log('new sequence: ' + sequence);
+  } 
 })
 
