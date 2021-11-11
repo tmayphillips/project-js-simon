@@ -62,5 +62,17 @@ html {
 }
 
 .simon-button.green.light-up, .simon-button.green:active {
-  box-shadow: 10px 10px 5px
+  box-shadow: 10px 10px 5px rgb(70, 173, 94)
+}
+
+.simon-button.red.light-up, .simon-button.red:active {
+  box-shadow: 10px 10px 5px rgb(165, 77, 77)
+}
+
+.simon-button.yellow.light-up, .simon-button.yellow:active {
+  box-shadow: 10px 10px 5px rgb(202, 170, 72)
+}
+
+.simon-button.blue.light-up, .simon-button.blue:active {
+  box-shadow: 10px 10px 5px rgb(101, 158, 202)
 }
