@@ -30,6 +30,10 @@ html {
   grid-row-gap: 20px;
 }
 
+.height-sm {
+  height: 50px;
+}
+
 .simon-container .simon-button {
   align-items: center;
   background-color: #333;
@@ -55,4 +59,8 @@ html {
 
 .simon-button.blue {
   background-color: #2185D0;
+}
+
+.simon-button.green.light-up, .simon-button.green:active {
+  box-shadow: 10px 10px 5px
 }

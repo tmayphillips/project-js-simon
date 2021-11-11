@@ -1,19 +1,24 @@
-let greenButton = document.querySelector('.simon-button.green');
-greenButton.addEventListener('click', function() {
-  alert('You clicked the green button');
-});
+document.querySelector('#start').addEventListener('click', function() {
+  startGame()
 
-let redButton = document.querySelector('.simon-button.red');
-redButton.addEventListener('click', function() {
-  alert('You clicked the red button');
-});
+  let greenButton = document.querySelector('.simon-button.green');
+  greenButton.addEventListener('click', function() {
+    console.log('You clicked the green button');
+  });
 
-let yellowButton = document.querySelector('.simon-button.yellow');
-yellowButton.addEventListener('click', function() {
-  alert('You clicked the yellow button');
-});
+  let redButton = document.querySelector('.simon-button.red');
+  redButton.addEventListener('click', function() {
+    console.log('You clicked the red button');
+  });
 
-let blueButton = document.querySelector('.simon-button.blue');
-blueButton.addEventListener('click', function() {
-  alert('You clicked the blue button');
-});
+  let yellowButton = document.querySelector('.simon-button.yellow');
+  yellowButton.addEventListener('click', function() {
+    console.log('You clicked the yellow button');
+  });
+
+  let blueButton = document.querySelector('.simon-button.blue');
+  blueButton.addEventListener('click', function() {
+    console.log('You clicked the blue button');
+  });
+})
+
